@@ -11,3 +11,12 @@ def index(request):
                "</html>"
     # Return the template as content argument in HTTP response
     return HttpResponse(content=template)
+    
+from datetime import date
+
+def get_date(request):
+    today = date.today()
+    template = "<html>" \
+                "Today's date is {}" \
+               "</html>".format(today)
+    return HttpResponse(content=template)
