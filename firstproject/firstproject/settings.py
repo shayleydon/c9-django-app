@@ -26,6 +26,7 @@ SECRET_KEY = 'django-insecure-$-jyb=w$0#qn=t8ud3813c4t=9w8y^!drie$fgd2pl@9+$z*)p
 DEBUG = True
 
 ALLOWED_HOSTS = []
+#ALLOWED_HOSTS = ['*','.us-south.codeengine.appdomain.cloud']
 
 
 # Application definition
