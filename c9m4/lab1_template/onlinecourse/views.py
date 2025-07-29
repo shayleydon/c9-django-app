@@ -6,8 +6,26 @@ from django.urls import reverse
 from django.views import generic, View
 from django.http import Http404
 
-# Create your class based views here.
+# generic views here
 
+# Note that CourseListView is subclassing from generic.ListView instead of View
+# so that it can use attributes and override methods from ListView such as get_queryset()
+class CourseListView(generic.ListView):
+    template_name = 'onlinecourse/course_list.html'
+    context_object_name = 'course_list'
+
+    # Override get_queryset() to provide list of objects
+    def get_queryset(self):
+       courses = Course.objects.order_by('-total_enrollment')[:10]
+       return courses
+       
+# Note that CourseDetailsView is now subclassing DetailView 
+class CourseDetailsView(generic.DetailView):
+    model = Course
+    template_name = 'onlinecourse/course_detail.html'     
+
+# Create your class based views here.
+'''
 # Note that we are subclassing CourseListView from base View class
 class CourseListView(View):
 
@@ -31,7 +49,7 @@ class CourseDetailsView(View):
             return render(request, 'onlinecourse/course_detail.html', context)
         except Course.DoesNotExist:
             raise Http404("No course matches the given id.")        
-        
+'''        
 class EnrollView(View):
 
     # Handles post request
