@@ -49,6 +49,29 @@ python3 server.py
 http://127.0.0.1:5000/
 curl -X GET -i -w '\n' localhost:5000
 
+::flask::
+python3 -m venv venv
+source venv/bin/activate
+pip install Flask==2.2.2
+pip freeze > requirements.txt
+pip uninstall Werkzeug
+cat "Werkzeug==2.2.2" >> requirements.txt
+pip install -r requirements.txt
+flask --app server --debug run
+python3 server.py
+http://127.0.0.1:5000/
+
+::django::
+ 1971  python3 -m venv venv
+ 1972  source venv/bin/activate
+ 1972  pip install Django
+ 1973  pip install -r requirements.txt
+ 1974  pip list
+ 1975  pwd
+ 1976  python3 manage.py makemigrations
+ 1977  python3 manage.py migrate
+ 1978  python3 manage.py createsuperuser
+ 1979  python3 manage.py runserver
 
 https://note.nkmk.me/en/python-pip-install-requirements/
 https://note.nkmk.me/en/python-pip-usage/
