@@ -13,4 +13,9 @@
  2021  python3 manage.py runserver
  2024  cd ..
  2025  pipreqs . --force
+ 2023  python3 manage.py makemigrations customer360
+ 2024  python3 manage.py makemigrations
+ 2025  python3 manage.py migrate
+  2021  python3 manage.py runserver
+
 
