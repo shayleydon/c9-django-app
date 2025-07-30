@@ -1,0 +1,16 @@
+ 2000  python3 -m venv venv
+ 2001  source venv/bin/activate
+ 2002  pip list
+ 2003  pip install django
+ 2004  pip install pipreqs
+ 2010  pip freeze > requirements.txt
+ 2005  pipreqs . --force
+ 2016  django-admin startproject customer360
+ 2017  ls
+ 2018  cd customer360
+ 2019  python3.11 manage.py migrate
+ 2020  python3 manage.py migrate
+ 2021  python3 manage.py runserver
+ 2024  cd ..
+ 2025  pipreqs . --force
+
