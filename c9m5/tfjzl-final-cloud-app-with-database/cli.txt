@@ -1,0 +1,13 @@
+ 1999  [ ! -d 'tfjzl-final-cloud-app-with-database' ] && git clone https://github.com/ibm-developer-skills-network/tfjzl-final-cloud-app-with-database.git
+ 2000  cd tfjzl-final-cloud-app-with-database
+ 2001  python3 -m venv venv
+ 2002  source venv/bin/activate
+ 2003  pip install -U -r requirements.txt
+ 2004  python3 manage.py makemigrations
+ 2005  python3 manage.py migrate
+ 2006  python3 manage.py runserver
+ 2011  python3 manage.py makemigrations onlinecourse
+ 2012  python3 manage.py migrate
+ 2013  python3 manage.py createsuperuser
+ 2006  python3 manage.py runserver
+
